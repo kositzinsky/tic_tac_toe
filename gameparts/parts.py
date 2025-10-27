@@ -36,6 +36,13 @@ class Board:
             ):
                 return True
         return False
+    
+    def clear_board(self):
+        for i in range(self.field_size):
+            for j in range(self.field_size):
+                self.board[i][j] = ' '
+
+        
 
         
     def __str__(self):
