@@ -11,11 +11,11 @@ def main():
         # Тут пользователь вводит координаты ячейки.
         while True:
             try:
-                row = int(input("Введите номер строки: "))
+                row = int(input("Введите номер строки: ")) - 1
                 if 0 < row >= game.field_size:
                     raise FieldIndexError
 
-                column = int(input("Введите номер столбца: "))
+                column = int(input("Введите номер столбца: ")) - 1
                 if 0 < column >= game.field_size:
                     raise FieldIndexError
 
@@ -47,11 +47,23 @@ def main():
 
         if game.chek_win(current_player):
             print(f"Победил игрок: {current_player}")
-            running = False
+            print('Еще игру? y/n')
+            if input() == 'y':
+                game.clear_board()
+                game.display()
+                current_player = 'X'
+            else:
+                running = False
 
         if game.is_board_full():
             print("Ничья")
-            running = False
+            print('Еще игру? y/n')
+            if input() == 'y':
+                game.clear_board()
+                game.display()
+                current_player = 'X'
+            else:
+                running = False
 
         
         current_player = "O" if current_player == "X" else "X"
