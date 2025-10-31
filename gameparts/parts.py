@@ -39,7 +39,7 @@ class Board:
     def save_result(self, player=None):
         with open(R"C:\Dev\tic_tac_toe\results.txt", "a", encoding="utf-8") as o:
             if player is None:
-                o.write("Ничья")
+                o.write("Ничья" + "\n")
             else:
                 o.write(f"Победил игрок {player}" + "\n")
 

@@ -4,7 +4,7 @@ import pygame
 
 pygame.init()
 
-CELL_SIZE = 200
+CELL_SIZE = 125
 BOARD_SIZE = 3
 WIDTH = HEIGHT = CELL_SIZE * BOARD_SIZE
 LINE_WIDTH = 15
